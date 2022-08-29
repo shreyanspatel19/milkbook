@@ -17,6 +17,7 @@
  .price-font{
    font-family: "Times New Roman",Century,serif;
  }
+ 
 
 :root {
   --bs-blue: #0d6efd;
@@ -2203,7 +2204,7 @@ progress {
   color: #212529;
   background-color: #fff;
   background-clip: padding-box;
-  border: 1px solid #ced4da;
+  border: 1px solid #ced4ff;
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
@@ -2222,7 +2223,8 @@ progress {
   cursor: pointer;
 }
 .form-control:focus, .dataTable-input:focus {
-  color: #212529;
+  color: #0a0a0a;
+  font-size: large;
   background-color: #fff;
   border-color: #86b7fe;
   outline: 0;

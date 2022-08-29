@@ -1,52 +1,65 @@
 import React from 'react';
-// import { a} from 'react-router-dom';
+import { NavLink} from 'react-router-dom';
 
+const sidebarToggle = document.body.querySelector('#sidebarToggle');
+if (sidebarToggle) {
+    // Uncomment Below to persist sidebar toggle between refreshes
+    // if (localStorage.getItem('sb|sidebar-toggle') === 'true') {
+    //     document.body.classList.toggle('sb-sidenav-toggled');
+    // console.log("78yuguh")
 
+    // }
+    console.log("yuguh")
+    sidebarToggle.addEventListener('click', event => {
+        event.preventDefault();
+        document.body.classList.toggle('sb-sidenav-toggled');
+        localStorage.setItem('sb|sidebar-toggle', document.body.classList.contains('sb-sidenav-toggled'));
+    });
+}
 
 export default function Sidenav() {
   return (
 <div id="layoutSidenav_nav">
-                <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
-                    <div class="sb-sidenav-menu">
-                        <div class="nav">
-                            <div class="sb-sidenav-menu-heading">Core</div>
-                            <a class="nav-link" href="index.html">
-                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                <nav className="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+                    <div className="sb-sidenav-menu">
+                        <div className="nav">
+                            <div className="sb-sidenav-menu-heading">Core</div>
+                            <NavLink className="nav-link" to="/">
+                                <div className="sb-nav-link-icon"><i className="fas fa-tachometer-alt"></i></div>
                                 Dashboard
-                            </a>
+                            </NavLink>
                             
-                            <div class="sb-sidenav-menu-heading">Interface</div>
-                            <a class="nav-link" href="Add-User.html">
-                                <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
+                            <div className="sb-sidenav-menu-heading">Interface</div>
+                            <NavLink className="nav-link" to="/Adduser">
+                                <div className="sb-nav-link-icon"><i className="fas fa-chart-area"></i></div>
                                 Add-User
-                            </a>
-                            <a class="nav-link" href="User-Details.html">
-                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                            </NavLink>
+                            <NavLink className="nav-link" to="/User-Details.html">
+                                <div className="sb-nav-link-icon"><i className="fas fa-columns"></i></div>
                                 User Details
-                            </a>                            
-                            <a class="nav-link" href="charts.html">
-                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                                Calculation-User
-
-                            </a>                            
-                            <div class="sb-sidenav-menu-heading">Support</div>
-                            <a class="nav-link" href="Settings.html">
-                                <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
+                            </NavLink>                            
+                            <NavLink className="nav-link" to="/Showuser">
+                                <div className="sb-nav-link-icon"><i className="fas fa-table"></i></div>
+                                Show-User
+                            </NavLink>                            
+                            <div className="sb-sidenav-menu-heading">Support</div>
+                            <a className="nav-link" href="Settings.html">
+                                <div className="sb-nav-link-icon"><i className="fas fa-chart-area"></i></div>
                                 Settings
                             </a>
-                            <a class="nav-link" href="HelpSupport.html">
-                                <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
+                            <a className="nav-link" href="HelpSupport.html">
+                                <div className="sb-nav-link-icon"><i className="fas fa-chart-area"></i></div>
                                 Help and Contact Us
                             </a>
 
-                            <a class="nav-link" href="HowTouse.html">
-                                <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
+                            <a className="nav-link" href="HowTouse.html">
+                                <div className="sb-nav-link-icon"><i className="fas fa-chart-area"></i></div>
                                 How to Use ?
                             </a>
                         </div>
                     </div>
-                    <div class="sb-sidenav-footer">
-                        <div class="small">Logged in as:</div>
+                    <div className="sb-sidenav-footer">
+                        <div className="small">Logged in as:</div>
                         Unique IT Solution
                     </div>
                 </nav>
