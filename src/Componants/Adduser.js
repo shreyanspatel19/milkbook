@@ -11,7 +11,7 @@ import { Navigate, useNavigate, useParams } from "react-router-dom";
 
 export default function Adduser() {
   const navigate = useNavigate();
-  const [data, setData] = useState({});
+  const [data, setData] = useState({clientid:1});
   
 
   useEffect(() => {
@@ -20,9 +20,9 @@ export default function Adduser() {
         {
           method: "POST",
           body: JSON.stringify(data),
-          headers: {
-            "Content-Type": "application/json"
-          }
+          // headers: {
+          //   "Content-Type": "application/json"
+          // }
           
         }
       )
@@ -46,32 +46,36 @@ export default function Adduser() {
                         <ol class="breadcrumb mb-4">
                             <li class="breadcrumb-item active">Add-user</li>
                         </ol>
-        <form>
           
+        <MDBInput value={data.customername}
+              onChange={(e) => {
+                setData({  ...data,customerid: e.target.value });
+              }} wrapperClass='mb-4' id='form6Example10' label='Customer id' />
+
       <MDBInput value={data.customername}
               onChange={(e) => {
-                setData({  customername: e.target.value });
+                setData({ ...data, customername: e.target.value });
               }} wrapperClass='mb-4' id='form6Example3' label='Customer name' />
 
       <MDBInput value={data.customermobilenumber}
               onChange={(e) => {
-                setData({  customermobilenumber: e.target.value,clientid: 6 });
+                setData({ ...data, customermobilenumber: e.target.value});
               }} wrapperClass='mb-4' type='tel' id='form6Example6' label='Phone Number' />
       <MDBInput value={data.customerarea}
               onChange={(e) => {
-                setData({  customerarea: e.target.value });
+                setData({ ...data, customerarea: e.target.value });
               }} wrapperClass='mb-4' id='form6Example4' label='Area' />
       <MDBInput value={data.customeradress}
               onChange={(e) => {
-                setData({  customeradress: e.target.value });
+                setData({...data,  customeradress: e.target.value });
               }} wrapperClass='mb-4' id='form6Example4' label='Adress' />
       <MDBInput value={data.liter}
               onChange={(e) => {
-                setData({  liter: e.target.value });
+                setData({ ...data, liter: e.target.value });
               }} wrapperClass='mb-4' type='number' id='form6Example5' label='Milk Liter' />
       <MDBInput value={data.customermilkprice}
               onChange={(e) => {
-                setData({  customermilkprice: e.target.value });
+                setData({ ...data, customermilkprice: e.target.value });
               }} wrapperClass='mb-4' type='number' id='form6Example9' label='Milk Price' />
 
       <MDBCheckbox
@@ -98,7 +102,6 @@ export default function Adduser() {
              >
       Create an account
       </MDBBtn>
-    </form>
         </div>
     
     </div>
