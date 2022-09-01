@@ -1,26 +1,12 @@
 import React from 'react';
 import { NavLink} from 'react-router-dom';
 
-const sidebarToggle = document.body.querySelector('#sidebarToggle');
-if (sidebarToggle) {
-    // Uncomment Below to persist sidebar toggle between refreshes
-    // if (localStorage.getItem('sb|sidebar-toggle') === 'true') {
-    //     document.body.classList.toggle('sb-sidenav-toggled');
-    // console.log("78yuguh")
 
-    // }
-    console.log("yuguh")
-    sidebarToggle.addEventListener('click', event => {
-        event.preventDefault();
-        document.body.classList.toggle('sb-sidenav-toggled');
-        localStorage.setItem('sb|sidebar-toggle', document.body.classList.contains('sb-sidenav-toggled'));
-    });
-}
 
 export default function Header() {
   return (
    <>   {/* <!-- ======= Header ======= --> */}
-  <heade   id="heefader" className="fixed--top ">
+  <header id="heefader" className="fixed--top ">
   <nav className="sb-topnav navbar navbar-expand navbar-dark bg-dark">
             {/* <!-- Navbar Brand--> */}
             <NavLink className="navbar-brand ps-3" to="/">Start Bootstrap</NavLink>
@@ -50,7 +36,7 @@ export default function Header() {
             </ul>
             {/* <!-- Navbar end--> */}
         </nav>
-  </heade>
+  </header>
    {/* <!-- End Header -->  */}
    </> 
 

@@ -2,29 +2,11 @@ import React from 'react'
 import Header from './Header'
 import Sidenav from './Sidenav'
 
-const sidebarToggle = document.body.querySelector('#sidebarToggle');
-if (sidebarToggle) {
-    // Uncomment Below to persist sidebar toggle between refreshes
-    // if (localStorage.getItem('sb|sidebar-toggle') === 'true') {
-    //     document.body.classList.toggle('sb-sidenav-toggled');
-    // console.log("78yuguh")
-
-    // }
-    console.log("yuguh")
-    sidebarToggle.addEventListener('click', event => {
-        event.preventDefault();
-        document.body.classList.toggle('sb-sidenav-toggled');
-        localStorage.setItem('sb|sidebar-toggle', document.body.classList.contains('sb-sidenav-toggled'));
-    });
-}
 
 export default function Dashboard() {
   return (
     <>
-    <Header/>
     
-    <div id="layoutSidenav">
-      <Sidenav/>
       <div id="layoutSidenav_content">
               <main>
                       <div className="container-fluid px-4">
@@ -142,7 +124,6 @@ export default function Dashboard() {
                                   </div>
               </main>
       </div>
-    </div>
     </>
   )
 }

@@ -10,29 +10,7 @@ import { Navigate, useNavigate} from "react-router-dom";
 export default function Adduser() {
   const navigate = useNavigate();
   const [data, setData] = useState({clientid:1});
-  
 
-  // useEffect(() => {
-  //   fetch(
-  //       "https://thehappyhomedecor.com/unique/api/Customer/addCustomer.php?apikey=123",
-  //       {
-  //         method: "POST",
-  //         body: JSON.stringify(data),
-  //         // headers: {
-  //         //   "Content-Type": "application/json"
-  //         // }
-          
-  //       }
-  //     )
-  //     .then((res) => {
-  //         return res.json();
-  //       })
-  //       .then((res) => {
-  //         setData(res);
-  //       });
-    
-  // }, []);
-  
   return (
     <>
     

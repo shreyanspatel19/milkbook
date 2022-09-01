@@ -24,21 +24,6 @@ function myFunction() {
     }
   }
 
-  const sidebarToggle = document.body.querySelector('#sidebarToggle');
-if (sidebarToggle) {
-    // Uncomment Below to persist sidebar toggle between refreshes
-    // if (localStorage.getItem('sb|sidebar-toggle') === 'true') {
-    //     document.body.classList.toggle('sb-sidenav-toggled');
-    // console.log("78yuguh")
-
-    // }
-    console.log("yuguh")
-    sidebarToggle.addEventListener('click', event => {
-        event.preventDefault();
-        document.body.classList.toggle('sb-sidenav-toggled');
-        localStorage.setItem('sb|sidebar-toggle', document.body.classList.contains('sb-sidenav-toggled'));
-    });
-}
 
 export default function Showuser() {
     const navigate = useNavigate();
@@ -64,10 +49,7 @@ export default function Showuser() {
     console.log(data);
   return (
     <>
-      <Header />
-
-      <div id="layoutSidenav">
-        <Sidenav />
+    
         <div id="layoutSidenav_content">
             
         <div class="container-fluid px-4">
@@ -76,16 +58,14 @@ export default function Showuser() {
                             <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
                             <li class="breadcrumb-item active">Tables</li>
                         </ol>
-                        <div class="card mb-4">
-                            
-                        </div>
-                        <div class="card mb-4">
-                            <div class="card-header">
+                       
+                        <div class=" mb-4">
+                            <div class="">
                                 <i class="fas fa-table me-1"></i>
                                 DataTable Example
                             </div>
-                            <div class="card-body">
-                                <table id="datatablesSimple">
+                            <div class="">
+                                <table id="" className="mt-3 table table-sm Tablesborder">
                                     <thead>
                                         <tr>
                                             <th>Name</th>
@@ -175,9 +155,6 @@ export default function Showuser() {
                         </div>
                     </div>
           </div>
-          
-        
-      </div>
     </>
   );
 }

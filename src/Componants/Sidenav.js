@@ -1,21 +1,7 @@
 import React from 'react';
 import { NavLink} from 'react-router-dom';
 
-const sidebarToggle = document.body.querySelector('#sidebarToggle');
-if (sidebarToggle) {
-    // Uncomment Below to persist sidebar toggle between refreshes
-    // if (localStorage.getItem('sb|sidebar-toggle') === 'true') {
-    //     document.body.classList.toggle('sb-sidenav-toggled');
-    // console.log("78yuguh")
 
-    // }
-    console.log("yuguh")
-    sidebarToggle.addEventListener('click', event => {
-        event.preventDefault();
-        document.body.classList.toggle('sb-sidenav-toggled');
-        localStorage.setItem('sb|sidebar-toggle', document.body.classList.contains('sb-sidenav-toggled'));
-    });
-}
 
 export default function Sidenav() {
   return (
@@ -34,10 +20,10 @@ export default function Sidenav() {
                                 <div className="sb-nav-link-icon"><i className="fas fa-chart-area"></i></div>
                                 Add-User
                             </NavLink>
-                            <NavLink className="nav-link" to="/User-Details.html">
+                            {/* <NavLink className="nav-link" to="/User-Details.html">
                                 <div className="sb-nav-link-icon"><i className="fas fa-columns"></i></div>
                                 User Details
-                            </NavLink>                            
+                            </NavLink>                             */}
                             <NavLink className="nav-link" to="/Showuser">
                                 <div className="sb-nav-link-icon"><i className="fas fa-table"></i></div>
                                 Show-User
