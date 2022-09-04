@@ -1,85 +1,123 @@
 import React from 'react';
-import {
-  MDBInput,
-  MDBCheckbox,
-  MDBBtn
-} from 'mdb-react-ui-kit';
-import { useEffect, useState } from "react";
-import { Navigate, useNavigate} from "react-router-dom";
 
-export default function Adduser() {
-  const navigate = useNavigate();
-  const [data, setData] = useState({clientid:1});
+
+export default function Userdetails() {
 
   return (
     <>
-    
-      <div id="layoutSidenav_content">
-        <div className='container-fluid px-4' >
-                        <h1 class="mt-4">Add Customer Details</h1>
-                        <ol class="breadcrumb mb-4">
-                            <li class="breadcrumb-item active">Add-user</li>
-                        </ol>
-          
-        <MDBInput value={data.customername}
-              onChange={(e) => {
-                setData({  ...data,customerid: e.target.value });
-              }} wrapperClass='mb-4' id='form6Example10' label='Customer id' />
+    <div id="layoutSidenav_content">
+      <div class="container-fluid px-4">
+          <div>
+              <h3 class="mt-4">Customer id :</h3>
+              <form class=" d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
+                  <div class="input-group">
+                      <input class="form-control" type="text" placeholder="Search for..." aria-label="Search for..." aria-describedby="btnNavbarSearch" />
+              <button class="btn btn-primary" id="btnNavbarSearch" type="button"><i class="fas fa-search"></i></button>
 
-      <MDBInput value={data.customername}
-              onChange={(e) => {
-                setData({ ...data, customername: e.target.value });
-              }} wrapperClass='mb-4' id='form6Example3' label='Customer name' />
+                  </div>
+                  
+              </form>
+          </div>
+          <div>
+          <div>
+              <h1 class="mt-3 text-center">
+                  UNIQUE DAIRY FARM <hr/>
+              </h1>
+          </div>
+          <div>
+              <h6 class="price-font container mt-1 " style={{display: "flex",justifyContent: "flex-end",position: "absolute",right: 0}}><br/> Total Price : 8465   </h6>
+              <ram><samp> <h5 class="price-font">Ramji Kaka Matelvada bajuvada</h5> </samp></ram>
 
-      <MDBInput value={data.customermobilenumber}
-              onChange={(e) => {
-                setData({ ...data, customermobilenumber: e.target.value});
-              }} wrapperClass='mb-4' type='tel' id='form6Example6' label='Phone Number' />
-      <MDBInput value={data.customerarea}
-              onChange={(e) => {
-                setData({ ...data, customerarea: e.target.value });
-              }} wrapperClass='mb-4' id='form6Example4' label='Area' />
-      <MDBInput value={data.customeradress}
-              onChange={(e) => {
-                setData({...data,  customeradress: e.target.value });
-              }} wrapperClass='mb-4' id='form6Example4' label='Adress' />
-      <MDBInput value={data.liter}
-              onChange={(e) => {
-                setData({ ...data, liter: e.target.value });
-              }} wrapperClass='mb-4' type='number' id='form6Example5' label='Milk Liter' />
-      <MDBInput value={data.customermilkprice}
-              onChange={(e) => {
-                setData({ ...data, customermilkprice: e.target.value });
-              }} wrapperClass='mb-4' type='number' id='form6Example9' label='Milk Price' />
+              <h4 class="price-font">Price :- 56</h4>
 
-      <MDBCheckbox
-        wrapperClass='d-flex justify-content-center mb-4'
-        id='form6Example8'
-        label='Create an account?'
-        defaultChecked
-      />
-
-      <MDBBtn className='mb-4' type='submit' block  onClick={() => {
-                  // fetch(
-                  //   "https://thehappyhomedecor.com/unique/api/Customer/addCustomer.php?apikey=123",
-                  //   {
-                  //     method: "POST",
-                  //     body: JSON.stringify(data),
-                  //     headers: {
-                  //       "Content-Type": "application/json"
-                  //     }
-                  //   }
-                  // ).then(() => {
-                  //   navigate("/");
-                  // });
-              }}
-             >
-      Create an account
-      </MDBBtn>
-        </div>
-    
+          </div>
+          <div>
+            
+            
+          </div>
+          {/* <!-- table start --> */}
+          <div class="table-responsive">
+          <table class="mt-3 table table-sm Tablesborder table-bordered" >
+              <thead>
+                <tr>
+                  <th scope="col-2" className='col-2'>&nbsp; #</th>
+                  <th scope="col-4" className='col-4'>Date</th>
+                  <th scope="col-4"  className='col-4'>Liter</th>
+                  <th scope="col-3" className='col-2'>time</th>
+                  <th scope="col-3" className='col-2'>time</th>
+                  <th scope="col-3" className='col-2'>time</th>
+                  <th scope="col-3" className='col-2'>time</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">&nbsp;1</th>
+                  <td>12-05-2022</td>
+                  <td>2</td>
+                  <td>11:20 PM</td>
+                </tr>
+                <tr>
+                  <th scope="row">&nbsp;2</th>
+                  <td>13-05-2022</td>
+                  <td>5</td>
+                  <td>12:22 PM</td>
+                </tr>
+                <tr>
+                  <th scope="row">&nbsp;3</th>
+                  <td>14-05-2022</td>
+                  <td>3</td>
+                  <td>11:20 PM</td>
+                </tr>
+                <tr>
+                  <th scope="row">&nbsp;4</th>
+                  <td>15-05-2022</td>
+                  <td>2.5</td>
+                  <td>12:22 PM</td>
+                </tr>
+                <tr>
+                  <th scope="row">&nbsp;5</th>
+                  <td>16-05-2022</td>
+                  <td>5.5</td>
+                  <td>11:20 PM</td>
+                </tr>
+                <tr>
+                  <th scope="row">&nbsp;6</th>
+                  <td>17-05-2022</td>
+                  <td>1</td>
+                  <td>12:22 PM</td>
+                </tr>
+                <tr>
+                  <th scope="row">&nbsp;7</th>
+                  <td>18-05-2022</td>
+                  <td>1.5</td>
+                  <td>11:20 PM</td>
+                </tr>
+                <tr>
+                  <th scope="row">&nbsp;8</th>
+                  <td>19-05-2022</td>
+                  <td>2.5</td>
+                  <td>12:22 PM</td>
+                </tr>
+                <tr>
+                  <th scope="row">&nbsp;9</th>
+                  <td>20-05-2022</td>
+                  <td>3.5</td>
+                  <td>11:20 PM</td>
+                </tr>
+                <tr>
+                  <th scope="row">&nbsp;10</th>
+                  <td>21-05-2022</td>
+                  <td>5</td>
+                  <td>12:22 PM</td>
+                </tr>
+              </tbody>
+            </table>
+            </div>
+          {/* <!-- table end --> */}
+          </div>
+      </div>
     </div>
-        </>
+  </>
   );
 }
 

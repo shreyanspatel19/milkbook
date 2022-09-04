@@ -5,33 +5,30 @@ import {
   MDBBtn
 } from 'mdb-react-ui-kit';
 import { useEffect, useState } from "react";
-import { Navigate, useNavigate} from "react-router-dom";
+import {  useNavigate} from "react-router-dom";
 
 export default function Adduser() {
   const navigate = useNavigate();
-  const [data, setData] = useState({clientid:1});
+  const [data, setData] = useState({customer_sno:1});
   
 
-  // useEffect(() => {
-  //   fetch(
-  //       "https://thehappyhomedecor.com/unique/api/Customer/addCustomer.php?apikey=123",
-  //       {
-  //         method: "POST",
-  //         body: JSON.stringify(data),
-  //         // headers: {
-  //         //   "Content-Type": "application/json"
-  //         // }
+  useEffect(() => {
+    fetch(
+        "https://thehappyhomedecor.com/unique/api/Customer/addCustomer.php?apikey=123",
+        {
+          method: "POST",
+          body: JSON.stringify(data),
+          // headers: {
+          //   "Content-Type": "application/json"
+          // }
           
-  //       }
-  //     )
-  //     .then((res) => {
-  //         return res.json();
-  //       })
-  //       .then((res) => {
-  //         setData(res);
-  //       });
+        }
+      )
+        .then((res) => {
+          setData(res);
+        });
     
-  // }, []);
+  }, []);
   
   return (
     <>
@@ -43,35 +40,35 @@ export default function Adduser() {
                             <li class="breadcrumb-item active">Add-user</li>
                         </ol>
           
-        <MDBInput value={data.customername}
+        <MDBInput value={data.company_sno}
               onChange={(e) => {
-                setData({  ...data,customerid: e.target.value });
+                setData({  ...data,company_sno: e.target.value });
               }} wrapperClass='mb-4' id='form6Example10' label='Customer id' />
 
-      <MDBInput value={data.customername}
+      <MDBInput value={data.customer_name}
               onChange={(e) => {
-                setData({ ...data, customername: e.target.value });
+                setData({ ...data, customer_name: e.target.value });
               }} wrapperClass='mb-4' id='form6Example3' label='Customer name' />
 
-      <MDBInput value={data.customermobilenumber}
+      <MDBInput value={data.customer_contactnumber}
               onChange={(e) => {
-                setData({ ...data, customermobilenumber: e.target.value});
+                setData({ ...data, customer_contactnumber: e.target.value});
               }} wrapperClass='mb-4' type='tel' id='form6Example6' label='Phone Number' />
-      <MDBInput value={data.customerarea}
+      <MDBInput value={data.customer_area}
               onChange={(e) => {
-                setData({ ...data, customerarea: e.target.value });
+                setData({ ...data, customer_area: e.target.value });
               }} wrapperClass='mb-4' id='form6Example4' label='Area' />
-      <MDBInput value={data.customeradress}
+      <MDBInput value={data.customer_adress}
               onChange={(e) => {
-                setData({...data,  customeradress: e.target.value });
+                setData({...data,  customer_adress: e.target.value });
               }} wrapperClass='mb-4' id='form6Example4' label='Adress' />
-      <MDBInput value={data.liter}
+      <MDBInput value={data.customer_avarageliter} 
               onChange={(e) => {
-                setData({ ...data, liter: e.target.value });
+                setData({ ...data, customer_avarageliter: e.target.value });
               }} wrapperClass='mb-4' type='number' id='form6Example5' label='Milk Liter' />
-      <MDBInput value={data.customermilkprice}
+      <MDBInput value={data.customer_milkprice}
               onChange={(e) => {
-                setData({ ...data, customermilkprice: e.target.value });
+                setData({ ...data, customer_milkprice: e.target.value });
               }} wrapperClass='mb-4' type='number' id='form6Example9' label='Milk Price' />
 
       <MDBCheckbox
@@ -82,21 +79,23 @@ export default function Adduser() {
       />
 
       <MDBBtn className='mb-4' type='submit' block  onClick={() => {
-                  // fetch(
-                  //   "https://thehappyhomedecor.com/unique/api/Customer/addCustomer.php?apikey=123",
-                  //   {
-                  //     method: "POST",
-                  //     body: JSON.stringify(data),
-                  //     headers: {
-                  //       "Content-Type": "application/json"
-                  //     }
-                  //   }
-                  // ).then(() => {
-                  //   navigate("/");
-                  // });
+                  fetch(
+                    "https://thehappyhomedecor.com/unique/api/Customer/addCustomer.php?apikey=123",
+                    {
+                      method: "POST",
+                      body: JSON.stringify(data),
+                      // headers: {
+                      //   "Content-Type": "application/json"
+                      // }
+                    }
+                  )
+                  .then(() => {
+                    navigate("/");
+                  })
+                  ;
               }}
              >
-      Create an account
+      Create an account{JSON.stringify(data)}
       </MDBBtn>
         </div>
     

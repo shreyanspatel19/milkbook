@@ -6,6 +6,7 @@ import Dashboard from './Componants/Dashboard';
 import Header from './Componants/Header';
 import Showuser from './Componants/Showuser';
 import Sidenav from './Componants/Sidenav';
+import Userdetails from './Componants/Userdetails';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 function Layout(){
@@ -27,6 +28,8 @@ root.render(
             <Route index element={<Dashboard/>} />
             <Route path="/Adduser" element={<Adduser/>} />
             <Route path="/Showuser" element={<Showuser/>} />
+            <Route path="/Userdetails" element={<Userdetails/>} />
+            
         </Route>
       
     </Routes>

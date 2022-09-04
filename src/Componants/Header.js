@@ -1,6 +1,9 @@
 import React from 'react';
 import { NavLink} from 'react-router-dom';
 
+function myfun(){
+  
+}
 
 
 export default function Header() {
@@ -12,7 +15,7 @@ export default function Header() {
             <NavLink className="navbar-brand ps-3" to="/">Start Bootstrap</NavLink>
             {/* <!-- Sidebar Toggle--> */}
             
-            <button  className="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle"><i className="fas fa-bars"></i></button>
+            <div onLoad={myfun()}  className="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle"><i className="fas fa-bars"></i></div>
             
         
             {/* <!-- Navbar Search--> */}
