@@ -1,3 +1,5 @@
+
+
 /*!
     * Start Bootstrap - SB Admin v7.0.5 (https://startbootstrap.com/template/sb-admin)
     * Copyright 2013-2022 Start Bootstrap
@@ -11,7 +13,7 @@ window.addEventListener('DOMContentLoaded', event => {
 
     // Toggle the side navigation
     const sidebarToggle = document.body.querySelector('#sidebarToggle');
-    if (sidebarToggle) {
+    if (!sidebarToggle) {
 
         console.log("yuguh")
         sidebarToggle.addEventListener('click', event => {
